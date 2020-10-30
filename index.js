@@ -7,7 +7,7 @@ const { getPlanets } = require('./src/planets');
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-    res.render('home', { posts: posts })
+    res.render('home')
   })
 
 app.get('/people/:sortBy?', async (req, res) => {
