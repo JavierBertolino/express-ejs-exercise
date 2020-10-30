@@ -1,20 +1,17 @@
 const { getAll } = require('./apiHandler');
+const config = require('./../config.json');
 
 async function getPeople(sortKey) {
-    let peopleUrl = 'https://swapi.dev/api/people/';
+    const response = await getAll(config.peopleUrl);
 
-    const response = await getAll(peopleUrl);
-
-    return sortKey ? response.sort((a, b) => compareFunction(a, b, sortKey) ) : response;
+    return sortKey ? response.sort((a, b) => compareFunction(a, b, sortKey)) : response;
 }
 
 function compareFunction(a, b, sortKey) {
     if (sortKey === "name") {
-        console.log("sorting by name");
         return a[sortKey] > b[sortKey] ? 1 : -1;
-    }
-    else {
-        return a[sortKey] - b[sortKey]
+    } else {
+        return a[sortKey] - b[sortKey];
     }
 }
 

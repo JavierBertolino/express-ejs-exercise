@@ -1,4 +1,3 @@
-
 const request = require('request')
 
 async function requestData(url) {
