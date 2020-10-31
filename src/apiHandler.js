@@ -2,9 +2,9 @@ const request = require('request')
 
 async function requestData(url) {
     return await new Promise((resolve, reject) => {
-        request(url, { json: true }, (err, res, body) => {
-            if (err)
-                reject(err);
+        request(url, { json: true }, (error, res, body) => {
+            if (error)
+                reject(error);
             resolve(body);
         });
     })
@@ -14,16 +14,20 @@ async function requestData(url) {
 async function getAll(url) {
     let response = [];
     let items = [];
+    try {
 
-    do {
-        if (response && response.next) {
-            url = response.next;
-        }
+        do {
+            if (response && response.next) {
+                url = response.next;
+            }
 
-        response = await requestData(url);
-        items = [...items, response.results];
+            response = await requestData(url);
+            items = [...items, response.results];
 
-    } while (response.next)
+        } while (response.next)
+    } catch (e) {
+        console.error('Failed to retrieve the data', e);
+    }
 
     return items.flat();
 }
