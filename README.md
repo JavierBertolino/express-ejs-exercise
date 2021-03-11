@@ -1,14 +1,10 @@
-# grow-exercise
+# Express+EJS-exercise using Star Wars Api (3 hours challenge)
 
 Hi!
 
-Thanks so much for the opportunity, I had so much fun doing it (star wars fan here). I know it's just a server but i did some work on the UI as well to make it prettier (nothing too fancy).
+Navigate to the root directory and execute `node.` on a terminal
 
 Make sure you start at http://localhost:8080/ first.
 
-
-Hope it meets the requirements and you like it too!
-
-Cheers!
-
+Hope you like it!
 Javier
