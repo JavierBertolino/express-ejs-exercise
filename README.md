@@ -1,4 +1,4 @@
-# Express+EJS-exercise using Star Wars Api (3 hours challenge)
+# Express+EJS-exercise using Star Wars Api
 
 Hi!
 
